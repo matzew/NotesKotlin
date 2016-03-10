@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:layout_margin="@dimen/text_16"
+			  android:orientation="vertical">
+
+	<EditText
+		android:id="@+id/note_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/size_12"
+		android:ellipsize="end"
+		android:hint="@string/title"
+		android:singleLine="true"
+		android:textSize="@dimen/text_16"/>
+
+	<EditText
+		android:id="@+id/note_content"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/size_12"
+		android:hint="@string/content"
+		android:minLines="@integer/note_lines"
+		android:textSize="@dimen/text_16"/>
+
+</LinearLayout>

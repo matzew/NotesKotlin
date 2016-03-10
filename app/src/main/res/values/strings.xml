@@ -1,0 +1,18 @@
+<resources>
+	<string name="app_name">NotesKotlin</string>
+	<string name="new_note">Neue Notiz</string>
+	<string name="username">Username</string>
+	<string name="password">Password</string>
+	<string name="login">Login</string>
+
+	<string name="enter_a_user">You have to enter a username</string>
+	<string name="enter_a_password">You have to enter a password with at least 2 charaters</string>
+	<string name="password_incorrect">The entered password is incorrect</string>
+	<string name="register">Register</string>
+	<string name="user_exists">The user already exists</string>
+	<string name="user_not_existing">The user does not exists</string>
+	<string name="title">Title</string>
+	<string name="content">Content</string>
+	<string name="save">Save</string>
+
+</resources>
