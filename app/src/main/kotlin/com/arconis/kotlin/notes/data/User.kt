@@ -17,10 +17,10 @@ data class User(var id: Long?, val username: String, val password: String) : Par
 
     fun toContentValues(): ContentValues {
         val values = ContentValues()
-        with (UserTable) {
-            values.put(ID, id)
-            values.put(USERNAME, username)
-            values.put(PASSWORD, password)
+        with (values) {
+            put(UserTable.ID, id)
+            put(UserTable.USERNAME, username)
+            put(UserTable.PASSWORD, password)
         }
         return values
     }
@@ -48,8 +48,7 @@ data class User(var id: Long?, val username: String, val password: String) : Par
 
 fun Cursor.toUser(): User {
     with(this) {
-        return User(getLong(getColumnIndex(UserTable.ID)), getString(getColumnIndex(UserTable.USERNAME)), getString(getColumnIndex(UserTable.PASSWORD))
-        )
+        return User(getLong(getColumnIndex(UserTable.ID)), getString(getColumnIndex(UserTable.USERNAME)), getString(getColumnIndex(UserTable.PASSWORD)))
     }
 }
 
