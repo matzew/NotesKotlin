@@ -27,12 +27,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onRegisterClicked() {
-        if (userService.doesUserExist(user.value())) {
-            toast(R.string.user_exists)
-        } else {
-            val newUser = User(user.value(), password.value())
-            userService.saveUser(newUser)
-            MainActivity.startWithUser(this, newUser)
+        if (checkCredentials()) {
+            if (userService.doesUserExist(user.value())) {
+                toast(R.string.user_exists)
+            } else {
+                val newUser = User(user.value(), password.value())
+                userService.saveUser(newUser)
+                MainActivity.startWithUser(this, newUser)
+            }
         }
     }
 
