@@ -56,6 +56,6 @@ class ActivityView<V : View>(private val id: Int) : ReadOnlyProperty<Activity, V
 
 class FragmentView<V : View>(private val id: Int) : ReadOnlyProperty<Fragment, V> {
     override fun getValue(thisRef: Fragment, property: KProperty<*>): V {
-        return thisRef.getView().findViewById(id) as V
+        return thisRef.getView()?.findViewById(id) as V
     }
 }

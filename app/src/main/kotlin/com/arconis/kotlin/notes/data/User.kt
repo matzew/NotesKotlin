@@ -17,37 +17,40 @@ data class User(var id: Long?, val username: String, val password: String) : Par
 
     fun toContentValues(): ContentValues {
         val values = ContentValues()
-        values.put(UserTable.ID, id)
-        values.put(UserTable.USERNAME, username)
-        values.put(UserTable.PASSWORD, password)
+        with (UserTable) {
+            values.put(ID, id)
+            values.put(USERNAME, username)
+            values.put(PASSWORD, password)
+        }
         return values
     }
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
-        dest.writeLong(id ?: -1)
-        dest.writeString(username)
-        dest.writeString(password)
+        with (dest) {
+            writeLong(id ?: -1)
+            writeString(username)
+            writeString(password)
+        }
     }
 
-    override fun describeContents(): Int {
-        return 0
-    }
+    override fun describeContents() = 0
 
     companion object {
-        public val CREATOR: Parcelable.Creator<User> = object : Parcelable.Creator<User> {
-            override fun createFromParcel(source: Parcel): User {
-                return User(source)
-            }
+        @JvmField final val CREATOR: Parcelable.Creator<User> = object : Parcelable.Creator<User> {
+            override fun createFromParcel(source: Parcel) = User(source)
 
-            override fun newArray(size: Int): Array<User> {
-                return arrayOf()
+            override fun newArray(size: Int): Array<User?> {
+                return arrayOfNulls(size)
             }
         }
     }
 }
 
 fun Cursor.toUser(): User {
-    return User(this.getLong(this.getColumnIndex(UserTable.ID)), this.getString(this.getColumnIndex(UserTable.USERNAME)), this.getString(this.getColumnIndex(UserTable.PASSWORD)))
+    with(this) {
+        return User(getLong(getColumnIndex(UserTable.ID)), getString(getColumnIndex(UserTable.USERNAME)), getString(getColumnIndex(UserTable.PASSWORD))
+        )
+    }
 }
 
 private fun Long.nullOrId(): Long? {
