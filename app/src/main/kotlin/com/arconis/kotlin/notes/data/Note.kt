@@ -7,10 +7,7 @@ import com.arconis.kotlin.notes.db.NotesTable
 /**
  * Created by lex on 07.12.15.
  */
-data class Note(var id: Long?, val title: String, val content: String, var userId: Long) {
-    constructor(title: String, content: String, userId: Long) : this(null, title, content, userId)
-
-    constructor() : this(null, "", "", -1)
+data class Note(var id: Long? = null, val title: String = "", val content: String = "", var userId: Long = -1) {
 
     fun toContentValues(): ContentValues {
         val values = ContentValues()

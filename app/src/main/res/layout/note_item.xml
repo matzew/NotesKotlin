@@ -3,7 +3,7 @@
 			  xmlns:tools="http://schemas.android.com/tools"
 			  android:layout_width="match_parent"
 			  android:layout_height="match_parent"
-			  android:padding="@dimen/surrounding"
+			  android:padding="@dimen/view_inner_margin"
 			  android:orientation="vertical">
 
 	<TextView

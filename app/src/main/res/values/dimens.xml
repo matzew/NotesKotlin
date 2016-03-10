@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<dimen name="view_inner_margin">12dp</dimen>
+	<dimen name="view_surrounding_margin">18dp</dimen>
+
 	<dimen name="note_title_size">18sp</dimen>
-	<dimen name="surrounding">12dp</dimen>
+	<dimen name="text_medium">16sp</dimen>
 	<dimen name="note_content_size">12sp</dimen>
-	<dimen name="size_12">12dp</dimen>
-	<dimen name="text_16">16sp</dimen>
-	<dimen name="size_18">18dp</dimen>
 </resources>

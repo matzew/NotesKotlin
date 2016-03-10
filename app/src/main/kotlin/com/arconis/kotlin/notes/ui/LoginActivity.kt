@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         if (userService.doesUserExist(user.value())) {
             toast(R.string.user_exists)
         } else {
-            val newUser = User(user.value(), password.value())
+            val newUser = User(username = user.value(), password = password.value())
             userService.saveUser(newUser)
             MainActivity.startWithUser(this, newUser)
         }

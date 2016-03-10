@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView android:id="@+id/main_list"
-		  xmlns:android="http://schemas.android.com/apk/res/android"
-		  android:layout_width="match_parent"
-		  android:layout_height="match_parent"/>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 android:layout_width="match_parent"
+			 android:layout_height="match_parent">
+
+	<ListView android:id="@+id/main_list"
+			  xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"/>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/add_note"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="right|end|bottom"
+		android:layout_margin="@dimen/view_inner_margin"
+		android:src="@android:drawable/ic_menu_edit"/>
+</FrameLayout>

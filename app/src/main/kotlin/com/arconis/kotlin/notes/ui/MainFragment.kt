@@ -3,7 +3,9 @@ package com.arconis.kotlin.notes.ui
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ListView
 import com.arconis.kotlin.notes.R
 import com.arconis.kotlin.notes.data.User
@@ -34,6 +36,7 @@ class MainFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.main_fragment, container, false)
         val notes = view.findViewById(R.id.main_list) as ListView
+        view.findViewById(R.id.add_note).setOnClickListener { listener?.onCreateNewNote() }
 
         activity.title = "Notes for ${user.username}"
 
@@ -42,18 +45,6 @@ class MainFragment : Fragment() {
         notes.adapter = notesAdapter
 
         return view
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_new_note) {
-            listener?.onCreateNewNote()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     interface MainActions {
