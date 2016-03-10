@@ -14,6 +14,7 @@ import com.arconis.kotlin.notes.utils.ParcelableExtra
  * Created by lex on 14.08.15.
  */
 class MainActivity : AppCompatActivity(), CreateNoteFragment.CreateNoteListener, MainFragment.MainActions {
+
     private val user: User by ParcelableExtra(ARG_USER)
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -11,6 +11,7 @@ import com.arconis.kotlin.notes.db.NotesTable
  * Created by lex on 03.09.15.
  */
 class NoteService(private val context: Context) {
+
     fun saveNote(note: Note) {
         NotesDbHelper(context).writableDatabase.use {
             val id = it.insert(NotesTable.TABLE_NAME, null, note.toContentValues())

@@ -44,16 +44,14 @@ class MainFragment : Fragment() {
         return view
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_menu, menu)
-    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) = inflater.inflate(R.menu.main_menu, menu)
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_new_note) {
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.menu_new_note -> {
             listener?.onCreateNewNote()
-            return true
+            true
         }
-        return super.onOptionsItemSelected(item)
+        else -> super.onOptionsItemSelected(item)
     }
 
     interface MainActions {

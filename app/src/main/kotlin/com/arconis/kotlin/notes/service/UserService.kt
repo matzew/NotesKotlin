@@ -10,6 +10,7 @@ import com.arconis.kotlin.notes.db.UserTable
  * Created by lex on 03.09.15.
  */
 class UserService(private val context: Context) {
+
     fun getUserByName(username: String): User? {
         NotesDbHelper(context).readableDatabase.use {
             it.query(UserTable.TABLE_NAME, null, "${UserTable.USERNAME}=?", arrayOf(username), null, null, null).use {
