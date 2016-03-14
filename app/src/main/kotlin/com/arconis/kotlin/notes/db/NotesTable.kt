@@ -11,11 +11,7 @@ object NotesTable {
     const val MESSAGE = "message"
     const val USER_ID = "userId"
 
-    fun createStatement(): String {
-        return "CREATE TABLE $TABLE_NAME ($ID Integer Primary Key AutoIncrement, $TITLE Text, $MESSAGE Text, $USER_ID Integer)"
-    }
+    fun createStatement() = "CREATE TABLE $TABLE_NAME ($ID Integer Primary Key AutoIncrement, $TITLE Text, $MESSAGE Text, $USER_ID Integer)"
 
-    fun dropStatement(): String {
-        return "DROP TABLE IF EXISTS $TABLE_NAME"
-    }
+    fun dropStatement() = "DROP TABLE IF EXISTS $TABLE_NAME"
 }

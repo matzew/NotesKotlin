@@ -10,11 +10,8 @@ object UserTable {
     const val USERNAME = "username"
     const val PASSWORD = "password"
 
-    fun createStatement(): String {
-        return "CREATE TABLE $TABLE_NAME ($ID Integer Primary Key AutoIncrement, $USERNAME Text, $PASSWORD Text)"
-    }
+    fun createStatement() = "CREATE TABLE $TABLE_NAME ($ID Integer Primary Key AutoIncrement, $USERNAME Text, $PASSWORD Text)"
 
-    fun dropStatement(): String {
-        return "DROP TABLE IF EXISTS $TABLE_NAME"
-    }
+    fun dropStatement() = "DROP TABLE IF EXISTS $TABLE_NAME"
+
 }

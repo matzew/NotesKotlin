@@ -34,7 +34,7 @@ data class User(var id: Long?, val username: String, val password: String) : Par
             override fun createFromParcel(source: Parcel) = User(source)
 
             override fun newArray(size: Int): Array<User?> {
-                return arrayOfNulls(size)
+                return newArray(size)
             }
         }
     }
