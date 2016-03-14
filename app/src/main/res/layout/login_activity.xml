@@ -7,30 +7,13 @@
 
 	<android.support.design.widget.TextInputLayout
 		android:layout_width="match_parent"
-<<<<<<< HEAD
-		android:layout_height="wrap_content">
-=======
 		android:layout_height="wrap_content"
 		android:layout_marginBottom="@dimen/view_inner_margin">
->>>>>>> develop
 
 		<EditText
 			android:id="@+id/login_username"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-<<<<<<< HEAD
-			android:layout_marginBottom="@dimen/size_12"
-			android:ellipsize="end"
-			android:fontFamily="sans-serif"
-			android:hint="@string/username"
-			android:singleLine="true"
-			android:textSize="@dimen/text_16"/>
-	</android.support.design.widget.TextInputLayout>
-
-	<android.support.design.widget.TextInputLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
-=======
 			android:ellipsize="end"
 			android:hint="@string/username"
 			android:singleLine="true"
@@ -43,53 +26,38 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginBottom="@dimen/view_inner_margin">
->>>>>>> develop
 
 		<EditText
 			android:id="@+id/login_password"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-<<<<<<< HEAD
-			android:layout_marginBottom="@dimen/size_12"
-			android:fontFamily="sans-serif"
-			android:hint="@string/password"
-			android:inputType="textPassword"
-			android:singleLine="true"
-			android:textSize="@dimen/text_16"/>
-=======
 			android:hint="@string/password"
 			android:inputType="textPassword"
 			android:singleLine="true"
 			android:textSize="@dimen/text_medium"/>
 
->>>>>>> develop
 	</android.support.design.widget.TextInputLayout>
 
 	<LinearLayout
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_gravity="center"
+		android:layout_gravity="center_horizontal"
 		android:orientation="horizontal">
 
 		<Button
 			android:id="@+id/login_action"
 			style="?android:attr/buttonBarButtonStyle"
-			android:layout_width="0dp"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-<<<<<<< HEAD
-			android:layout_weight="1"
-=======
 			android:layout_marginEnd="@dimen/view_inner_margin"
 			android:layout_marginRight="@dimen/view_inner_margin"
->>>>>>> develop
 			android:text="@string/login"/>
 
 		<Button
 			android:id="@+id/login_register"
 			style="?android:attr/buttonBarButtonStyle"
-			android:layout_width="0dp"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_weight="1"
 			android:text="@string/register"/>
 
 	</LinearLayout>
