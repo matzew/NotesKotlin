@@ -29,13 +29,9 @@ data class User(var id: Long? = null, val username: String, val password: String
 
     companion object {
         @JvmField val CREATOR: Parcelable.Creator<User> = object : Parcelable.Creator<User> {
-            override fun createFromParcel(source: Parcel): User {
-                return User(source)
-            }
+            override fun createFromParcel(source: Parcel) = User(source)
 
-            override fun newArray(size: Int): Array<User> {
-                return newArray(size)
-            }
+            override fun newArray(size: Int) = arrayOfNulls<User>(size)
         }
     }
 }
