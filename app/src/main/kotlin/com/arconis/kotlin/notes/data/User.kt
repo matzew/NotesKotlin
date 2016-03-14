@@ -21,12 +21,10 @@ data class User(var id: Long?, val username: String, val password: String) : Par
         put(UserTable.PASSWORD, password)
     }
 
-    override fun writeToParcel(dest: Parcel, flags: Int) {
-        with (dest) {
-            writeLong(id ?: -1)
-            writeString(username)
-            writeString(password)
-        }
+    override fun writeToParcel(dest: Parcel, flags: Int) = with (dest) {
+        writeLong(id ?: -1)
+        writeString(username)
+        writeString(password)
     }
 
     override fun describeContents() = 0
@@ -42,10 +40,9 @@ data class User(var id: Long?, val username: String, val password: String) : Par
     }
 }
 
-fun Cursor.toUser(): User {
-    with(this) {
-        return User(getLong(getColumnIndex(UserTable.ID)), getString(getColumnIndex(UserTable.USERNAME)), getString(getColumnIndex(UserTable.PASSWORD)))
-    }
+fun Cursor.toUser(): User = with(this) {
+    return User(getLong(getColumnIndex(UserTable.ID)), getString(getColumnIndex(UserTable.USERNAME)), getString(getColumnIndex(UserTable.PASSWORD)))
 }
+
 
 private fun Long.nullOrId() = if (this == -1L) null else this

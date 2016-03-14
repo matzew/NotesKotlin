@@ -17,12 +17,10 @@ data class Note(var id: Long?, val title: String, val content: String, val userI
         put(NotesTable.MESSAGE, content)
         put(NotesTable.USER_ID, userId)
     }
+
 }
 
-
-fun Cursor.toNote(): Note {
-    with (this) {
-        return Note(getLong(getColumnIndex(NotesTable.ID)), getString(getColumnIndex(NotesTable.TITLE)), getString(getColumnIndex(NotesTable.MESSAGE)),
-                getLong(getColumnIndex(NotesTable.USER_ID)))
-    }
+fun Cursor.toNote(): Note = with (this) {
+    return Note(getLong(getColumnIndex(NotesTable.ID)), getString(getColumnIndex(NotesTable.TITLE)), getString(getColumnIndex(NotesTable.MESSAGE)),
+            getLong(getColumnIndex(NotesTable.USER_ID)))
 }
