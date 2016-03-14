@@ -11,17 +11,14 @@ data class Note(var id: Long?, val title: String, val content: String, val userI
 
     constructor(title: String, content: String, userId: Long) : this(null, title, content, userId)
 
-    fun toContentValues(): ContentValues {
-        val values = ContentValues()
-        with (values) {
-            put(NotesTable.ID, id)
-            put(NotesTable.TITLE, title)
-            put(NotesTable.MESSAGE, content)
-            put(NotesTable.USER_ID, userId)
-        }
-        return values
+    fun toContentValues() = ContentValues().apply {
+        put(NotesTable.ID, id)
+        put(NotesTable.TITLE, title)
+        put(NotesTable.MESSAGE, content)
+        put(NotesTable.USER_ID, userId)
     }
 }
+
 
 fun Cursor.toNote(): Note {
     with (this) {

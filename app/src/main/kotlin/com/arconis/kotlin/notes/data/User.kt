@@ -15,14 +15,10 @@ data class User(var id: Long?, val username: String, val password: String) : Par
 
     constructor(parcel: Parcel) : this(parcel.readLong().nullOrId(), parcel.readString(), parcel.readString())
 
-    fun toContentValues(): ContentValues {
-        val values = ContentValues()
-        with (values) {
-            put(UserTable.ID, id)
-            put(UserTable.USERNAME, username)
-            put(UserTable.PASSWORD, password)
-        }
-        return values
+    fun toContentValues() = ContentValues().apply {
+        put(UserTable.ID, id)
+        put(UserTable.USERNAME, username)
+        put(UserTable.PASSWORD, password)
     }
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
@@ -52,6 +48,4 @@ fun Cursor.toUser(): User {
     }
 }
 
-private fun Long.nullOrId(): Long? {
-    if (this == -1L) return null else return this
-}
+private fun Long.nullOrId() = if (this == -1L) null else this

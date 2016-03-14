@@ -29,9 +29,7 @@ class NotesAdapter(context: Context, objects: List<Note>?) : ArrayAdapter<Note>(
         return view;
     }
 
-    private fun createViewHolderFromView(view: View): ViewHolder {
-        return ViewHolder(view.findViewById(R.id.note_title) as TextView, view.findViewById(R.id.note_content) as TextView)
-    }
+    private fun createViewHolderFromView(view: View) = ViewHolder(view.findViewById(R.id.note_title) as TextView, view.findViewById(R.id.note_content) as TextView)
 
     private class ViewHolder(val title: TextView, val content: TextView)
 }
