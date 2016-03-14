@@ -2,26 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			  android:layout_width="match_parent"
 			  android:layout_height="match_parent"
-			  android:layout_margin="@dimen/text_16"
+			  android:layout_margin="@dimen/view_surrounding_margin"
 			  android:orientation="vertical">
 
-	<EditText
-		android:id="@+id/note_title"
+	<android.support.design.widget.TextInputLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginBottom="@dimen/size_12"
-		android:ellipsize="end"
-		android:hint="@string/title"
-		android:singleLine="true"
-		android:textSize="@dimen/text_16"/>
+		android:layout_marginBottom="@dimen/view_inner_margin">
 
-	<EditText
-		android:id="@+id/note_content"
+		<EditText
+			android:id="@+id/note_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:ellipsize="end"
+			android:hint="@string/title"
+			android:singleLine="true"
+			android:textSize="@dimen/text_medium"/>
+
+	</android.support.design.widget.TextInputLayout>
+
+	<android.support.design.widget.TextInputLayout
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginBottom="@dimen/size_12"
-		android:hint="@string/content"
-		android:minLines="@integer/note_lines"
-		android:textSize="@dimen/text_16"/>
+		android:layout_height="wrap_content">
+
+		<EditText
+			android:id="@+id/note_content"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/content"
+			android:textSize="@dimen/text_medium"/>
+
+	</android.support.design.widget.TextInputLayout>
 
 </LinearLayout>

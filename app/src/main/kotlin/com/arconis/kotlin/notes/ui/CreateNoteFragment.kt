@@ -51,7 +51,7 @@ class CreateNoteFragment : Fragment() {
     }
 
     private fun saveNote() {
-        val note = Note(title.value(), content.value(), user.id ?: -1)
+        val note = Note(title = title.value(), content = content.value(), userId = user.id ?: -1)
         NoteService(activity).saveNote(note)
         listener?.onNoteCreated(note)
     }

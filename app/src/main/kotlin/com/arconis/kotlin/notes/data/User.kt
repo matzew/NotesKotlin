@@ -9,9 +9,7 @@ import com.arconis.kotlin.notes.db.UserTable
 /**
  * Created by lex on 28.08.15.
  */
-data class User(var id: Long?, val username: String, val password: String) : Parcelable {
-
-    constructor(username: String, password: String) : this(null, username, password)
+data class User(var id: Long? = null, val username: String, val password: String) : Parcelable {
 
     constructor(parcel: Parcel) : this(parcel.readLong().nullOrId(), parcel.readString(), parcel.readString())
 
@@ -30,10 +28,12 @@ data class User(var id: Long?, val username: String, val password: String) : Par
     override fun describeContents() = 0
 
     companion object {
-        @JvmField final val CREATOR: Parcelable.Creator<User> = object : Parcelable.Creator<User> {
-            override fun createFromParcel(source: Parcel) = User(source)
+        @JvmField val CREATOR: Parcelable.Creator<User> = object : Parcelable.Creator<User> {
+            override fun createFromParcel(source: Parcel): User {
+                return User(source)
+            }
 
-            override fun newArray(size: Int): Array<User?> {
+            override fun newArray(size: Int): Array<User> {
                 return newArray(size)
             }
         }
