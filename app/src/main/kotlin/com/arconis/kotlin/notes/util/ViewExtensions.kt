@@ -1,4 +1,4 @@
-package com.arconis.kotlin.notes.utils
+package com.arconis.kotlin.notes.util
 
 import android.app.Activity
 import android.os.Parcelable

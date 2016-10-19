@@ -19,7 +19,7 @@ data class User(var id: Long? = null, val username: String, val password: String
         put(UserTable.PASSWORD, password)
     }
 
-    override fun writeToParcel(dest: Parcel, flags: Int) = with (dest) {
+    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
         writeLong(id ?: -1)
         writeString(username)
         writeString(password)

@@ -9,9 +9,9 @@ import com.arconis.kotlin.notes.R
 import com.arconis.kotlin.notes.data.Note
 import com.arconis.kotlin.notes.data.User
 import com.arconis.kotlin.notes.service.NoteService
-import com.arconis.kotlin.notes.utils.FragmentView
-import com.arconis.kotlin.notes.utils.ParcelableArgument
-import com.arconis.kotlin.notes.utils.value
+import com.arconis.kotlin.notes.util.FragmentView
+import com.arconis.kotlin.notes.util.ParcelableArgument
+import com.arconis.kotlin.notes.util.value
 
 /**
  * Created by lex on 03.09.15.

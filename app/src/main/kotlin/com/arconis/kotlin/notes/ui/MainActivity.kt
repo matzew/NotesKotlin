@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import com.arconis.kotlin.notes.R
 import com.arconis.kotlin.notes.data.Note
 import com.arconis.kotlin.notes.data.User
-import com.arconis.kotlin.notes.utils.ParcelableExtra
+import com.arconis.kotlin.notes.util.ParcelableExtra
 
 /**
  * Created by lex on 14.08.15.

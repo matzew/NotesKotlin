@@ -10,7 +10,7 @@ import android.widget.ListView
 import com.arconis.kotlin.notes.R
 import com.arconis.kotlin.notes.data.User
 import com.arconis.kotlin.notes.service.NoteService
-import com.arconis.kotlin.notes.utils.ParcelableArgument
+import com.arconis.kotlin.notes.util.ParcelableArgument
 
 /**
  * Created by lex on 03.09.15.

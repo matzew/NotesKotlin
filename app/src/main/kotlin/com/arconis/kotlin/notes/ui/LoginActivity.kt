@@ -6,7 +6,7 @@ import android.widget.EditText
 import com.arconis.kotlin.notes.R
 import com.arconis.kotlin.notes.data.User
 import com.arconis.kotlin.notes.service.UserService
-import com.arconis.kotlin.notes.utils.*
+import com.arconis.kotlin.notes.util.*
 
 /**
  * Created by lex on 03.09.15.
@@ -27,6 +27,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onRegisterClicked() {
+        if (!checkCredentials()) {
+            return
+        }
         if (userService.doesUserExist(user.value())) {
             toast(R.string.user_exists)
         } else {
@@ -34,12 +37,14 @@ class LoginActivity : AppCompatActivity() {
             userService.saveUser(newUser)
             MainActivity.startWithUser(this, newUser)
         }
+
     }
 
     private fun onLoginClicked() {
-        if (checkCredentials()) {
-            login()
+        if (!checkCredentials()) {
+            return
         }
+        login()
     }
 
     private fun login() {
